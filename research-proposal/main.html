@@ -64,67 +64,33 @@
         h5 {
             font-size: 16px;
         }
+
+        .intro-row {
+	        font-size: 16px;
+        }
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
 <div class="container-fluid p-5">
-	<div class="row">
+	<div class="row intro-row">
+		<div class="col-12 mb-3">
+			<h4 style="display:inline-block">Goal:</h4>
+			<span><br>Develop a system that can monitor the validity of projected Food Insecurity scenarios based on predicting whether the underlying assumptions for these scenarios still hold. </span>
+		</div>
 		<div class="col-12">
-			<h4 style="display:inline-block">Goal:</h4><span style="font-size: 18px">&nbsp; Develop a system that can monitor the validity of projected Food Insecurity scenarios based on predicting whether the underlying assumptions for these scenarios still hold. </span>
+			<h4 style="display:inline-block">Research questions:</h4>
+			<span><br> To develop this, we will answer the following research questions:</span>
+			<div id="rq-list"></div>
+		</div>
+		<div class="col-12">
+			<h4>Research plan:</h4>
+			<div>We have developed a research plan following the lines of human-centered design. The plan is therefore structured in four phases where we diverge and converge in each phase to develop the deliverables as defined below.</div>
 		</div>
 	</div>
 	<div class="row" id="phases-row">
-		<div class="phase-col implement">
-			<h4 class="phase-header">4. Implement</h4>
-			<div class="phase about">
-				<h5>This is about:</h5>
-				<ul>
-					<li>Understanding the problem</li>
-					<li>Finding out what the needs are of the intended users.</li>
-				</ul>
-			</div>
-			<div class="phase how">
-				<h5>How:</h5>
-				<ul>
-					<li>Interviews with stakeholders
-					</li>
-					<li>Literature study</li>
-				</ul>
-			</div>
-			<div class="phase rq">
-				<h5>Research questions:</h5>
-				<div>RQ 1: How are the assumptions underlying the classifications developed?</div>
-				<ul>
-					<li>How do experts decide on which data they should focus?</li>
-					<li>Which type of arguments/justifications are used for classifications? Which of those can be
-						formalized?
-					</li>
-					<ul>
-						<li>Which arguments are more universally reusable based on knowledge and evidence? Which
-							arguments are more based on personal estimations?
-						</li>
-					</ul>
-					<li>How are risk factors determined on a national level and a regional level?</li>
-					<ul>
-						<li>How do these two levels interact?</li>
-					</ul>
-				</ul>
-			</div>
-			<div class="phase deliverables">
-				<h5>Deliverables:</h5>
-				<ul>
-					<li>A set of user-requirements for the monitoring tool</li>
-					<li>A literature study on:</li>
-					<ul>
-						<li>The state-of-the-art within this field</li>
-						<li>The possible models to use for forecasting and nowcasting FI</li>
-						<li>The main theories and drivers behind FI</li>
-					</ul>
-				</ul>
-			</div>
-		</div>
+
 	</div>
 
 </div>
@@ -132,6 +98,39 @@
 <script>
 
 	$(document).ready(() => {
+		let RQs = [
+			"How are the assumptions underlying the FI scenarios developed? ",
+			[
+				"How do experts decide on which data they should focus?",
+				[
+					"Which logic is used to look at specific data categories?",
+					"Which logic is used to look at specific data items?",
+				],
+				"Which type of arguments/justifications are used for classifications? Which of those can be formalized?",
+				[
+					"Which arguments are more universally reusable based on knowledge and evidence? Which arguments are more based on personal estimations?",
+				],
+				"How are risk factors determined on a national level and a regional level?",
+				[
+					"How do these two levels interact?",
+				]],
+			"How can we formalize these assumptions?",
+			[
+				"Which types of models are best suited for formalizing the assumptions on which the classifications are based?",
+			],
+			"How can we develop a data-driven for/nowcasting model that monitors these assumptions?",
+			[
+				"What data do we need and what data is available?",
+				"How can we model the uncertainty that is inherent in these prediction models?",
+			],
+			"How well does our validity-monitoring tool work?",
+			[
+				"What degree of digital literacy does a user need to have to properly use it?",
+				"What is its performance in forecasting and nowcasting the validity of the FI assumptions?",
+				"How complete is it in terms of covering all types of FI assumptions?",
+			]
+		];
+
 		let phases = [
 			{
 				id: "clarify",
@@ -230,7 +229,7 @@
 			}
 
 
-		]
+		];
 
 		let res = ""
 
@@ -243,33 +242,36 @@
 				</div>
 				<div class="phase activities">
 					<h5>Phase activities:</h5>
-					${generateUL(p.phase_activities)}
+					${generateList(p.phase_activities)}
 				</div>
 
 				<div class="phase deliverables">
 					<h5>Deliverables:</h5>
-					${generateUL(p.deliverables)}
+					${generateList(p.deliverables)}
 				</div>
 			</div>
 		</div>`
 			res = res + phase_div;
 		})
+
+		$("#rq-list").html(generateList(RQs, "ol"))
 		$("#phases-row").html(res);
 
-		function generateUL(list) {
+		function generateList(list, type = "ul") {
 			let res = "";
 			for (let i in list) {
 				let item = list[i]
 				if (typeof item == "string") {
 					res += `<li>${item}</li>\n`
 				} else if (item.constructor.name === "Array") {
-					res += generateUL(item)
+					res += generateList(item)
 				}
 			}
-			return `<ul>${res}</ul>`;
+			return `<${type}>${res}</${type}>`;
 		}
-
 	});
+
+
 
 
 </script>
