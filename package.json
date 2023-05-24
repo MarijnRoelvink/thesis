@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "build": "node ./src/index.js"
+    "build": "node ./src/index.js",
+    "test": "node ./test/index.js"
   },
   "keywords": [],
   "author": "Marijn Roelvink",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@citation-js/plugin-bibtex": "^0.6.8",
     "citation-js": "^0.6.8"
   }
 }
