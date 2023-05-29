@@ -17,6 +17,11 @@
             font-size: 14px;
         }
 
+        .main-container {
+            padding: 4rem;
+            max-width: 1000px;
+        }
+
         .main-col {
             display: flex;
             flex-direction: column;
@@ -65,19 +70,25 @@
         }
 
         .intro-row {
-	        font-size: 16px;
+            font-size: 16px;
         }
 
         .quote {
             font-size: 19px;
-	        text-align: center;
+            text-align: center;
+            font-style: italic;
         }
 
         #rq-list ol {
-	        font-style: italic;
+            font-weight: 600;
         }
+
         #rq-list ul {
-	        font-style: normal;
+            font-weight: normal;
+        }
+
+        #phases-row {
+            margin: 0 -45px;
         }
 
 	</style>
@@ -85,34 +96,90 @@
 
 </head>
 <body>
-<div class="container-fluid p-5">
+<div class="container-fluid main-container">
 	<div class="row intro-row">
 		<div class="col-12 mb-3">
-			<h4>Abstract</h4>
-			<p>Climate change is increasingly affecting food insecurity (FI) worldwide, rendering numerous countries more susceptible to this issue. Therefore, it is crucial to accurately assess the FI situation in different countries so scarce humanitarian resources can be allocated appropiately. To this end, the Integrated Food Security Phase Classification (IPC), who is responsible for making these assessments, is striving to increase the scale and frequency of their assessments. Currently IPC analyses are performed once or twice a year for a specific country, leaving ample room for changes to occur in the meantime that invalidate the previously predicted FI scenarios. To address this, we propose to develop a monitoring tool that can signal throughout the year whether IPC assessments need to be reevaluated. Such a tool will enable humanitarian response to be better tailored to the current demands of the situation. In contrast to other data-driven research on modelling and predicting FI, we follow a human-centered design process where the practices and needs within the organization are leading for the development of our monitoring tool. By doing so, we ensure that our research answers the right problem and is made to fit within the existing structures of the IPC.</p>
+			<h4>Introduction</h4>
+			<p>
+				One of the global challenges we are facing currently is food insecurity: over 258 million people face
+				acute food insecurity, requiring urgent food, nutrition and livelihood assistance. These numbers have
+				been growing in the past years due to climate change, conflicts and soaring food prices due to COVID-19
+				and the war in Ukraine.
+			</p>
+			<p>
+				To which extent different countries are suffering from this condition is assessed by the Integrated Food
+				Security Phase Classification (IPC). These assessments are of high importance as they inform
+				humanitarian organizations where they should send their aid to. Moreover, given the scarcity of
+				humanitarian funds* it is essential that these assessments are as accurate as possible: underestimating
+				the problem results in unnecessary deaths and hardships, while overestimating it diverts limited
+				humanitarian resources away from areas with greater needs.
+			</p>
+			<p>
+				The IPC utilizes an evidence-based consensus process to classify the extent of food insecurity within a
+				country and identify the underlying factors driving it. This process relies on experts with extensive
+				knowledge of the country's context and food security dynamics. This not only ensures that the results
+				are backed up by causal factors that can be addressed, but also that the outcomes will be supported by
+				sufficient important stakeholders within the country.
+			</p>
+			<p>
+				However, as building technical consensus takes a considerable amount of resources in terms of time and
+				data gathering, this process is performed only once or twice a year. As such, this gives much room for
+				FI situations to change in the meantime, making it hard for organizations to act on what the current FI
+				situation actually demands. The IPC does make projections on what the FI situation will look like 3 to 6
+				months in the future, but these projections only work with the most-likely scenario and are based on
+				assumptions that may not retain their validity throughout the time in between assessments. Therefore, we
+				propose to develop a tool that monitors whether the predicted FI scenarios in-between FI analyses still
+				hold by assessing whether the assumptions underlying the predictions remain valid. This tool would then
+				serve as a warning system that could be used by the IPC to discover when an analysis needs to be redone
+				to account for the changed circumstances. Moreover, by formalising the assumptions underlying the
+				assessments, our tool could facilitate an unambiguous interpretation of the scenarios that could be used
+				in different countries.
+			</p>
+			<p>
+				Given the increasing urgency of this problem and the availability of new data sources, there have been
+				numerous attempts in recent years at using different forms of machine learning to predict Food
+				Insecurity classifications for countries. These models have been developed in isolation from the IPC
+				consensus process and have been aimed to replace the current assessment process rather than enhance it.
+				However, given the high-risk and context-sensitive nature of food insecurity, we believe that it is not
+				possible to replace expert assessments with a complete data-driven model and should not be strived for.
+				Instead, we rather see the value of using modelling in clarifying and enhancing the current analysis
+				process. Our research will therefore not solely be an opportunity-driven project where we develop a
+				machine-learning model that predicts food insecurity, but a project that starts with investigating how
+				the current process works and where a computer model could provide additional insights and understanding
+				to the people leading this process, before developing something. Following this line, we have chosen to
+				structure our project according to human-centred design principles, where in each phase the feedback of
+				its intended users is guiding for the further development of the model. See below our research questions
+				and research plan for more details.</p>
+
 		</div>
 		<div class="col-12">
 			<h4>Research question:</h4>
-			<p class="quote"><i>How can data-driven modelling methods aid in monitoring the validity of projected Food Insecurity scenarios by predicting whether the underlying assumptions for these scenarios still hold?</i></p>
+			<p class="quote">"How can <a href="https://computersciencewiki.org/index.php/Computer_modeling">computer
+				modeling</a> methods aid in monitoring the validity of projected Food
+				Insecurity scenarios by predicting whether the underlying assumptions for these scenarios still
+				hold?"</p>
 			<div>We will answer the main question by exploring these subquestions:</div>
 			<div id="rq-list"></div>
 		</div>
 		<div class="col-12">
 			<h4>Research plan:</h4>
-			<div>We have developed a research plan following the lines of human-centered design. The plan is therefore structured in four phases where we diverge and converge in each phase to develop the deliverables as defined below.
+			<div>We have developed a research plan following the lines of human-centered design. The plan is therefore
+				structured in four phases where we diverge and converge in each phase to develop the deliverables as
+				defined below.
 				The global planning for the following phases is:
 				<ul>
 					<li>From May until begin September: Clarify & Ideate</li>
 					<li>From July until December: Develop & Implement</li>
 				</ul>
-				As indicated by the planning, the execution periods of the phases will partly overlap with each other as insights from one phase will influence the outcomes of other phases.
+				As indicated by the planning, the execution periods of the phases will partly overlap with each other as
+				insights from one phase will influence the outcomes of other phases.
 			</div>
-	</div>
-	<div class="row" id="phases-row">
+		</div>
+		<div class="row" id="phases-row">
+
+		</div>
 
 	</div>
-
-</div>
 </body>
 <script>
 
@@ -289,8 +356,6 @@
 			return `<${type}>${res}</${type}>`;
 		}
 	});
-
-
 
 
 </script>
