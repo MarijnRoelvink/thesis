@@ -110,7 +110,7 @@
 				To which extent different countries are suffering from this condition is assessed by the Integrated Food
 				Security Phase Classification (IPC). These assessments are of high importance as they inform
 				humanitarian organizations where they should send their aid to. Moreover, given the scarcity of
-				humanitarian funds* it is essential that these assessments are as accurate as possible: underestimating
+				humanitarian funds it is essential that these assessments are as accurate as possible: underestimating
 				the problem results in unnecessary deaths and hardships, while overestimating it diverts limited
 				humanitarian resources away from areas with greater needs.
 			</p>
@@ -139,17 +139,17 @@
 				Given the increasing urgency of this problem and the availability of new data sources, there have been
 				numerous attempts in recent years at using different forms of machine learning to predict Food
 				Insecurity classifications for countries. These models have been developed in isolation from the IPC
-				consensus process and have been aimed to replace the current assessment process rather than enhance it.
-				However, given the high-risk and context-sensitive nature of food insecurity, we believe that it is not
-				possible to replace expert assessments with a complete data-driven model and should not be strived for.
-				Instead, we rather see the value of using modelling in clarifying and enhancing the current analysis
-				process. Our research will therefore not solely be an opportunity-driven project where we develop a
-				machine-learning model that predicts food insecurity, but a project that starts with investigating how
-				the current process works and where a computer model could provide additional insights and understanding
-				to the people leading this process, before developing something. Following this line, we have chosen to
-				structure our project according to human-centred design principles, where in each phase the feedback of
-				its intended users is guiding for the further development of the model. See below our research questions
-				and research plan for more details.</p>
+				consensus process and would function as a replacement of the consensus process rather than an
+				enhancement. However, given the high-risk and context-sensitive nature of food insecurity, we believe
+				that it is not possible to replace expert assessments with a complete data-driven model and should not
+				be strived for. Instead, we rather see the value of using modelling in clarifying and enhancing the
+				current analysis process. Our research will therefore not solely be an opportunity-driven project where
+				we develop a machine-learning model that predicts food insecurity, but a project that starts with
+				investigating how the current process works and where a computer model could provide additional insights
+				to the people leading this process. Following this line, we have chosen to structure our project
+				according to human-centred design principles, where in each phase the feedback of its intended users is
+				guiding for the further development of the model. See below our research questions and research plan for
+				more details.</p>
 
 		</div>
 		<div class="col-12">
@@ -243,7 +243,7 @@
 				],
 				deliverables: [" A taxonomy of the types of assumptions underlying FI scenarios",
 					" An overview of the consensus process",
-					" A set of user-requirements for the monitoring tool",
+					" A set of user-requirements for the monitoring tool, including a clearly defined use-case",
 					" A literature study on:", [
 						" The state-of-the-art within this field",
 						" The possible models to use for forecasting and nowcasting FI",
@@ -268,7 +268,7 @@
 							[
 								"How good is it at modelling uncertainty?",
 								"Is it able to incorporate expert input?",
-								"How trustworthy is the model?",
+								"How trustworthy is the model? What are its properties concerning explainability, transparancy, scrutability, complexity, etc? ",
 								"Does it fullfill the other user-requirements resulting from phase 1?",
 							]],
 						"Do a comparative analysis to come choose the best option"],
@@ -296,7 +296,9 @@
 					[
 						"Usability: how well can users work with the tool and understand it?",
 						"Relevance: Is it flexible enough to support all their classification assumptions? Would they want to use it in practice?",
-						"Effectiveness: How sound are the predictions? Are they accurate enough to be useful?"]],
+						"Effectiveness: How sound are the predictions? Are they accurate enough to be useful?",
+						"Reliability: How robust is the model? What are the minimal data requirements for it to properly function?",
+						"Model trade-offs: Where does the optimal balance lie between false positives and false negatives?"]],
 				deliverables: ["A working prototype",
 					"An evaluation of the prototype",]
 			}, {
